@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ -z "$ENV" ]; then
     echo "ENV variable not found. Please set it and try again"
     exit 1
@@ -13,3 +14,4 @@ export GOTMPDIR="$JENKINS_HOME/$ENV"
 mkdir -p $GOTMPDIR
 echo "*** Building the app ..."
 go build -o $GOTMPDIR/$ENV main.go
+
