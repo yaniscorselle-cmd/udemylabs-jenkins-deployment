@@ -28,7 +28,7 @@ pipeline {
             }
             steps {
                 script {
-                    export JENKINS_NODE_COOKIE=do_not_kill ; bash 'bash scripts/deploy.sh'
+                    sh 'export JENKINS_NODE_COOKIE=do_not_kill ; bash scripts/deploy.sh'
                 }
             }
         }
