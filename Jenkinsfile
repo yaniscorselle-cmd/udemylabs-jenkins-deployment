@@ -3,6 +3,7 @@ pipeline {
     tools { go 'go-1.19' }
     environment {
         ENV = "${env.BRANCH_NAME == 'main' ? 'PROD' : 'DEV'}"
+        BRANCH = "${env.BRANCH_NAME}"
     }
     stages {
         stage('Build') {
