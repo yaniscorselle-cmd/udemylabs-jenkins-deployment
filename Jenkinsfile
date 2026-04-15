@@ -19,5 +19,18 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            when {
+                anyOf {
+                    branch 'main';
+                    branch 'develop'
+                }
+            }
+            steps {
+                script {
+                    export JENKINS_NODE_COOKIE=do_not_kill ; bash 'bash scripts/deploy.sh'
+                }
+            }
+        }
     }
 }
